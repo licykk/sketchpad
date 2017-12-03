@@ -1,0 +1,24 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height:100%;
+  width: 100%;
+  margin: 0;
+}
+
+#container{
+  width: 60%;
+  height: 60%;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 10%;
+}
+
+.square{
+  box-sizing: border-box;
+  width: 6.25%;
+  height: 8%;
+  border: 1px solid black;
+  float: left;
+  background-color: white;
+}
