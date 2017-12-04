@@ -1,4 +1,6 @@
 var canvasSize = 256;
+var bgcolor = "white";
+var pencolor = "teal";
 
 function makeGrid(){
   document.g
@@ -18,7 +20,7 @@ function makeGrid(){
 }
 
 function changeColor(x){
-  x.style.background = "black";
+  x.style.background = pencolor;
 }
 
 function clearGrid(){
@@ -27,8 +29,17 @@ function clearGrid(){
 
 $(document).ready(function(){
   $("#clear").click(function(){
-    $(".square").css({"background-color": "white"})
+    $(".square").css({"background-color": bgcolor})
     $("div.square").remove();
     makeGrid();
   });
+  $("#color").keypress(function(e){
+    if (e.which == 13) {
+      if($("#color").val().length == 3 || $("#color").val().length == 6){
+      pencolor = "#" + $("#color").val();}
+      $("#color").val('');
+      $("#colorbox").css({"background-color": pencolor})
+      return false;    //<---- Add this line
+    }
+  })
 });
